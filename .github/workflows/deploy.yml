@@ -20,7 +20,7 @@ jobs:
       - run: npm ci
       
       - name: Build app
-        run: PUBLIC_URL=https://natwal7.github.io/MyReactApp/ npm run build 
+        run: PUBLIC_URL=https://natwal7.github.io/DrivingApp/ npm run build 
         env:
           CI: false
       
