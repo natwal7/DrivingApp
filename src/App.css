@@ -2,37 +2,63 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.ControlBar {
+  background-color: blue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.DashButton, .HoursButton {
+  background-color: orange;
+  width: 200px;
+  height: 50px;
+}
+
+.Timer {
+  background-color: fuchsia;
+}
+
+.StartButton, .StopButton {
+  background-color: aqua;
+  width: 200px;
+}
+
+.RunningTime {
+  background-color: orange;
+}
+
+.red {
+  background-color: red;
+}
+
+.red.on {
+  background-color: teal;
+}
+
+.yellow {
+  background-color: yellow;
+
+}
+
+.yellow.on {
+  background-color: orange;
+}
+
+button{
+  background-color: purple;
+}
+
+button.on {
+  background-color: powderblue;
 }
