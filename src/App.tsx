@@ -2,10 +2,27 @@
 import { useState } from 'react';
 import './App.css';
 import { MultiSelectButtons } from './components/MultiSelectButtons';
+import { Timer } from './Timer';
+import useLocalStorageState from 'use-local-storage-state';
 
 function App() {
   const [selectedButtonOne, setSelectedButtonOne] = useState<number>();
   const [selectedButtonTwo, setSelectedButtonTwo] = useState<number>();
+  const [startTime, setStartTime] = useLocalStorageState<number | undefined>('startTime', {defaultValue:undefined});
+
+  function handleStart(){
+    setStartTime(Date.now());
+    console.log(startTime);
+  }
+
+  function handleStop(){
+    if (startTime === undefined){
+      return;
+    }
+    console.log(Date.now() - startTime);
+    setStartTime(undefined);
+  }
+  
 
   return (
     <div className="App">
@@ -32,6 +49,7 @@ function App() {
         <div className="RunningTime">
           <p>Running Time here</p>
         </div>
+        <Timer onStart={handleStart} onStop={handleStop} startTime={startTime} />
         <MultiSelectButtons value={selectedButtonOne} onChange={setSelectedButtonOne}  options={['one', 'three', 'two', 'ten', 'seven', 'apple']}/>
         <MultiSelectButtons value={selectedButtonTwo} onChange={setSelectedButtonTwo} className={'yellow'} options={['zero', 'two', 'one', 'nine', 'eight', 'pepper']}/>
       </div>

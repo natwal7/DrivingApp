@@ -7,10 +7,10 @@
 import { ReactNode } from "react";
 
 function MultiSelectButtons(props:{
-    value:number | undefined,
-    onChange:(value:number)=>void, 
-    className?: string,
-    options: ReactNode[]
+    value:number | undefined;
+    onChange:(value:number)=>void;
+    className?: string;
+    options: ReactNode[];
 }) {
     //   props.value
     
