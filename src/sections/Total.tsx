@@ -1,4 +1,4 @@
-import { TimeEntry } from "./App";
+import { TimeEntry } from "../App";
 
 function Total(props: {
     entries: TimeEntry[];
